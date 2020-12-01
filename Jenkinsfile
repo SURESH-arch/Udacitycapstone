@@ -4,7 +4,7 @@ pipeline {
 
 		stage('Create Kubernetes Cluster') {
 			steps {
-				withAWS(region:'us-east-1', credentials:'aws_credentials') {
+				withAWS(region:'us-east-1', credentials:'aws-id') {
 					sh '''
 						eksctl create cluster \
 						--name udacitycluster \
@@ -24,7 +24,7 @@ pipeline {
 
 		stage('Configure kubectl') {
 			steps {
-				withAWS(region:'us-east-2', credentials:'aws_credentials') {
+				withAWS(region:'us-east-2', credentials:'aws-id') {
 					sh '''
 						aws eks --region us-east-2 update-kubeconfig --name udacitycluster
 					'''
