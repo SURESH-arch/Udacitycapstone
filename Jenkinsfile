@@ -4,7 +4,7 @@ pipeline {
 
 		stage('Create Kubernetes Cluster') {
 			steps {
-				withAWS(region:'us-east-2', credentials:'aws_credentials') {
+				withAWS(region:'us-east-1', credentials:'aws_credentials') {
 					sh '''
 						eksctl create cluster \
 						--name udacitycluster \
@@ -15,8 +15,8 @@ pipeline {
 						--nodes-min 1 \
 						--nodes-max 3 \
 						--node-ami auto \
-						--region us-east-2 \
-						--zones us-east-2a \
+						--region us-east-1 \
+						--zones us-east-1a \
 					'''
 				}
 			}
