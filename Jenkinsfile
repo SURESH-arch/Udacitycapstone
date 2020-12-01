@@ -17,7 +17,6 @@ pipeline {
 						--node-ami auto \
 						--region us-east-2 \
 						--zones us-east-2a \
-						--zones us-east-2b \
 					'''
 				}
 			}
