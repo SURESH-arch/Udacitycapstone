@@ -18,7 +18,6 @@ pipeline {
 						--region us-east-2 \
 						--zones us-east-2a \
 						--zones us-east-2b \
-						--zones us-east-2c \
 					'''
 				}
 			}
